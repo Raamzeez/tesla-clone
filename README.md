@@ -1,3 +1,17 @@
+# Tesla Clone
+
+### This project is an attempt to make a clone of Tesla's mobile application as a learning experience for using React Native and Expo
+
+### Example Images
+
+<p align="center" style="justify-content: space-between;">
+  <img src="./assets/images/progress1.png" alt="Progress 1" width="200"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/images/progress2.png" alt="Progress 2" width="200"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/images/progress3.png" alt="Progress 3" width="200"/>
+</p>
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
