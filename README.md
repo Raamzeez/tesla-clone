@@ -1,6 +1,6 @@
 # Tesla Clone
 
-### This project is an attempt to make a clone of Tesla's mobile application as a learning experience for using React Native and Expo
+### This project is an attempt to make a clone of the Tesla mobile app UI as a learning experience for using React Native and Expo
 
 ### Example Images
 
