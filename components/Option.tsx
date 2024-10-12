@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 interface Props {
   refer?: boolean;
@@ -12,12 +13,15 @@ interface Props {
 }
 
 const Option = ({ refer, icon, text, subtitle, background }: Props) => {
+  const router = useRouter();
+
   return (
     <TouchableOpacity
       style={[
         styles.optionContainer,
         { backgroundColor: background ? "#1f2021" : "transparent" },
       ]}
+      onPress={() => router.push("/Controls")}
     >
       <View
         style={{
