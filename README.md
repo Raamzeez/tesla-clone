@@ -2,7 +2,7 @@
 
 ### This project is an attempt to make a clone of the Tesla mobile app UI as a learning experience for using React Native and Expo
 
-### Example Images
+### Images of Clone
 
 <p align="center" style="justify-content: space-between;">
   <img src="./assets/images/progress1.png" alt="Progress 1" width="200"/>
@@ -10,8 +10,10 @@
   <img src="./assets/images/progress2.png" alt="Progress 2" width="200"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="./assets/images/progress3.png" alt="Progress 3" width="200"/>
-    &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="./assets/images/progress4.png" alt="Progress 4" width="200"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/images/progress5.png" alt="Progress 5" width="200"/>
 </p>
 
 # Welcome to your Expo app 👋
