@@ -13,7 +13,7 @@ interface Props {
 
 const Option = ({ refer, icon, text, subtitle, background }: Props) => {
   return (
-    <View
+    <TouchableOpacity
       style={[
         styles.optionContainer,
         { backgroundColor: background ? "#1f2021" : "transparent" },
@@ -71,7 +71,7 @@ const Option = ({ refer, icon, text, subtitle, background }: Props) => {
           </>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   subtitle: {
     color: "grey",
     fontSize: 14,
-    fontWeight: "400",
+    fontWeight: "500",
     marginLeft: 15,
     marginVertical: 5,
   },

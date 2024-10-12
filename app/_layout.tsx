@@ -15,6 +15,7 @@ import {
 } from "react-native";
 import Option from "@/components/Option";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { useState } from "react";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -33,18 +34,24 @@ const options: { icon?: string; text?: string; subtitle?: string }[] = [
 ];
 
 export default function RootLayout() {
+  const [showPercentage, setShowPercentage] = useState(false);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ padding: 10, marginBottom: 75 }}>
         <View style={{ marginLeft: 20 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text style={styles.carNameText}>Raamiz's Car</Text>
-            <AntDesign
-              name="down"
-              size={18}
-              color="grey"
-              style={{ marginLeft: 10 }}
-            />
+            <TouchableOpacity
+              style={{ flexDirection: "row", alignItems: "center" }}
+            >
+              <Text style={styles.carNameText}>Raamiz's Car</Text>
+              <AntDesign
+                name="down"
+                size={18}
+                color="grey"
+                style={{ marginLeft: 10 }}
+              />
+            </TouchableOpacity>
             <MaterialCommunityIcons
               style={{ marginLeft: "auto" }}
               name="message-text-outline"
@@ -62,17 +69,21 @@ export default function RootLayout() {
             <View style={styles.batteryContainer}>
               <View style={styles.batteryLevel} />
             </View>
-            <Text
-              style={[
-                {
-                  fontSize: 17,
-                  marginLeft: 10,
-                },
-                styles.statusText,
-              ]}
+            <TouchableOpacity
+              onPress={() => setShowPercentage(!showPercentage)}
             >
-              36 %
-            </Text>
+              <Text
+                style={[
+                  {
+                    fontSize: 17,
+                    marginLeft: 10,
+                  },
+                  styles.statusText,
+                ]}
+              >
+                {showPercentage ? "36 %" : "108 mi"}
+              </Text>
+            </TouchableOpacity>
           </View>
           <Text style={styles.statusText}>Parked</Text>
         </View>
