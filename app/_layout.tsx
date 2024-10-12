@@ -22,6 +22,13 @@ import Divider from "@/components/Divider";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
+const controls: { icon: string; activatedIcon?: string }[] = [
+  { icon: "lock", activatedIcon: "unlock" },
+  { icon: "fan" },
+  { icon: "bolt" },
+  { icon: "car" },
+];
+
 const options: { icon?: string; text?: string; subtitle?: string }[] = [
   { icon: "car", text: "Controls" },
   { icon: "fan", text: "Climate", subtitle: "Interior 74° F" },
@@ -39,6 +46,9 @@ export default function RootLayout() {
   const [vehicleDropdown, setVehicleDropdown] = useState<boolean>(false);
   const [vehicleName, setVehicleName] = useState<string>("Raamiz's Car");
   const [showPercentage, setShowPercentage] = useState<boolean>(false);
+  const [activatedControls, setActivatedControls] = useState(
+    controls.map((_) => false)
+  );
 
   const renameCar = () => {
     Alert.prompt("Name your vehicle", "", [
@@ -125,18 +135,30 @@ export default function RootLayout() {
                   justifyContent: "space-around",
                 }}
               >
-                <TouchableOpacity>
-                  <FontAwesome6 name="lock" size={24} color="grey" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <FontAwesome6 name="fan" size={24} color="grey" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <FontAwesome6 name="bolt" size={24} color="grey" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <FontAwesome6 name="car" size={24} color="grey" />
-                </TouchableOpacity>
+                {controls.map(({ icon, activatedIcon }, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={icon}
+                      onPress={() =>
+                        setActivatedControls((prevControls) =>
+                          prevControls.map((item, i) =>
+                            i === index ? !item : item
+                          )
+                        )
+                      }
+                    >
+                      <FontAwesome6
+                        name={
+                          activatedControls[index] && activatedIcon
+                            ? activatedIcon
+                            : icon
+                        }
+                        size={24}
+                        color={activatedControls[index] ? "white" : "grey"}
+                      />
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
             </View>
             <View style={{ marginTop: 30, marginBottom: 10 }}>
@@ -150,7 +172,7 @@ export default function RootLayout() {
               {options.map(({ icon, text, subtitle }, index) => {
                 return (
                   <Option
-                    key={index}
+                    key={text}
                     icon={icon}
                     text={text}
                     subtitle={subtitle}

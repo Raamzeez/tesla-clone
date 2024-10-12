@@ -28,20 +28,21 @@ const VehicleDropdown = ({ onCloseHandler }: Props) => {
         }}
       >
         <View style={{ padding: 10, marginLeft: 20 }}>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <TouchableOpacity onPress={onCloseHandler}>
-              <Text style={styles.productsText}>Products</Text>
-            </TouchableOpacity>
+          <TouchableOpacity
+            style={{ flexDirection: "row", alignItems: "center" }}
+            onPress={onCloseHandler}
+          >
+            <Text style={styles.productsText}>Products</Text>
             <AntDesign
               name={"up"}
               size={18}
               color="grey"
               style={{ marginLeft: 10 }}
             />
-          </View>
+          </TouchableOpacity>
           <DropdownItem />
           <Divider />
-          <View
+          <TouchableOpacity
             style={{
               flexDirection: "row",
               alignItems: "center",
@@ -63,7 +64,7 @@ const VehicleDropdown = ({ onCloseHandler }: Props) => {
             >
               Add Product
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
       <SafeAreaView style={styles.container}>
